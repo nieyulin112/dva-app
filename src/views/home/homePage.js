@@ -12,7 +12,8 @@ class HomePage extends React.Component {
         console.log('constructor');
         this.state = {
             ticket: 1,
-            name: '聂玉林'
+            name: '聂玉林',
+            childrenMsg: ''
         }
     }
     componentDidMount() {
@@ -39,7 +40,8 @@ class HomePage extends React.Component {
                 <Button type="primary" onClick={this.skipIndex}>跳转</Button>
                 <Button type="default" onClick={this.test}>测试</Button>
                 <Button type="warning" onClick={this.btnMsg}>warning</Button>
-                <Children>
+                <Button type="default" onClick={this.getChildMsg}>获取子组件的值</Button>
+                <Children ref="children">
                 </Children>
             </div>
         )
@@ -58,6 +60,11 @@ class HomePage extends React.Component {
     }
     btnMsg = () => {
         Modal.alert('消息', '侬好');
+    }
+    getChildMsg = () => {
+        this.setState({
+            childrenMsg: this.refs['children'].state.msg
+        })
     }
 }
 export default connect(({ homePage }) => homePage )(HomePage); // 注入namespace
