@@ -1,14 +1,16 @@
 import React from 'react';
-import {Router, Route } from 'dva/router';
-import { routes } from './routes/index.router';
+import {Router, Route, Switch } from 'dva/router';
+import { routes } from './routes/router';
 function RouterConfig({ history }) {
   return (
     <Router history={history}>
-      <div>
+      <Switch>
         {
-          routes.map(ps => (<Route render={() =>{ document.title = ps.title; return <ps.component/>}} key={ps.path} path={ps.path} title={ps.title}></Route>))
+          routes.map(ps => (<Route render={() =>{ document.title = ps.title; return <ps.component/>}} 
+            key={ps.path} path={ps.path} title={ps.title}>
+          </Route>))
         }
-      </div>
+      </Switch>
     </Router>
   );
 }
