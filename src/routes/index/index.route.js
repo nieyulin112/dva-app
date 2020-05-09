@@ -1,6 +1,6 @@
 import dynamic from 'dva/dynamic';
 const IndexCom = dynamic({
-    component: () => import('../../views/IndexPage')
+    component: () => import('../../views/index/IndexPage')
 })
 export default [
     {

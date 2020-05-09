@@ -1,6 +1,6 @@
 import dynamic from 'dva/dynamic';
 const HomeCom = dynamic({
-    component: () => import('../../views/homePage')
+    component: () => import('../../views/home/homePage')
 })
 export default [
     {

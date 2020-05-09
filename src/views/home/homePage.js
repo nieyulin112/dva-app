@@ -1,15 +1,14 @@
 import React from 'react';
 import { connect } from 'dva';
 import { routerRedux } from 'dva/router';
-import styles from './IndexPage.less';
-import PropTypes from 'prop-types';
+import styles from '../index/IndexPage.less';
+// import PropTypes from 'prop-types';
 class HomePage extends React.Component {
     componentDidMount() {
         this.props.dispatch({
             type: 'homePage/fetch',
             payload: {a: 1, b: 2}
         })
-        console.log('this2223333', this.props);
     }
     render() {
         return (
@@ -29,7 +28,6 @@ class HomePage extends React.Component {
       let s = {
           a: 1
       }
-      console.log('this2223333', this.props);
       this.props.dispatch({
           type: 'homePage/fetch',
           payload: { ...s }
@@ -37,6 +35,5 @@ class HomePage extends React.Component {
   }
 }
 HomePage.propTypes = {
-    homePage: PropTypes.object.isRequired
 };
 export default connect(({ homePage }) => homePage )(HomePage); // 注入namespace
