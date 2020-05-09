@@ -39,4 +39,4 @@ class HomePage extends React.Component {
 HomePage.propTypes = {
     homePage: PropTypes.object.isRequired
 };
-export default connect(({ homePage }) => homePage )(HomePage);
+export default connect(({ homePage }) => homePage )(HomePage); // 注入namespace
