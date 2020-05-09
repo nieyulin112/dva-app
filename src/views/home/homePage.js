@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'dva';
 import { routerRedux } from 'dva/router';
 import { Button, Modal } from 'antd-mobile';
+import Children from './children'
 // import PropTypes from 'prop-types';
 class HomePage extends React.Component {
     // 生命周期的使用
@@ -10,18 +11,14 @@ class HomePage extends React.Component {
         this.id = null;
         console.log('constructor');
         this.state = {
-            ticket: 1
+            ticket: 1,
+            name: '聂玉林'
         }
     }
     componentDidMount() {
         this.setState({ticket: 2}, () => {
-            console.log('setState')
-        })
-        console.log('ticket', this.state.ticket);
-        this.id = setInterval(() => {
-            console.log(1)
-        }, 1000)
-        console.log('组件挂载完成');
+            console.log('ticket', this.state.ticket);
+        });
     }
     // 子组件是不是应该更新
     shouldComponentUpdate() {
@@ -32,15 +29,18 @@ class HomePage extends React.Component {
     }
     componentWillUnmount() {
         console.log('组件销毁')
+        console.log('ticket', this.state.ticket);
         clearInterval(this.id);
     }
     render() {
-        console.log('render')
+        // const name = '聂玉林'
         return (
             <div>
                 <Button type="primary" onClick={this.skipIndex}>跳转</Button>
                 <Button type="default" onClick={this.test}>测试</Button>
                 <Button type="warning" onClick={this.btnMsg}>warning</Button>
+                <Children>
+                </Children>
             </div>
         )
     }
@@ -60,6 +60,4 @@ class HomePage extends React.Component {
         Modal.alert('消息', '侬好');
     }
 }
-HomePage.propTypes = {
-};
 export default connect(({ homePage }) => homePage )(HomePage); // 注入namespace
