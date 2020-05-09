@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'dva';
 import { routerRedux } from 'dva/router';
-import { Flex } from 'antd-mobile';
+import { Button } from 'antd-mobile';
 
 class IndexPage extends React.Component {
 	constructor(props) {
@@ -11,10 +11,9 @@ class IndexPage extends React.Component {
   	render() {
 		return (
 			<div>
-				<Flex justify="between">
-					<Flex.Item>1</Flex.Item>
-					<Flex.Item>2</Flex.Item>
-				</Flex>
+				<Button type="primary" onClick={this.skipHome}>
+					返回
+				</Button>
 			</div>
 		)
   	}

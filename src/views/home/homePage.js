@@ -5,18 +5,37 @@ import { Button, Modal } from 'antd-mobile';
 // import PropTypes from 'prop-types';
 class HomePage extends React.Component {
     // 生命周期的使用
-    componentWillReceiveProps() {
-        let { list } = this.props;
-        console.log('list', list);
+    constructor(props) {
+        super()
+        this.id = null;
+        console.log('constructor');
+        this.state = {
+            ticket: 1
+        }
     }
     componentDidMount() {
-        console.log('componentDidMount', this);
-        // this.props.dispatch({
-        //     type: 'homePage/fetch',
-        //     payload: {a: 1, b: 2}
-        // })
+        this.setState({ticket: 2}, () => {
+            console.log('setState')
+        })
+        console.log('ticket', this.state.ticket);
+        this.id = setInterval(() => {
+            console.log(1)
+        }, 1000)
+        console.log('组件挂载完成');
+    }
+    // 子组件是不是应该更新
+    shouldComponentUpdate() {
+        return false
+    }
+    componentDidUpdate() {
+        console.log('组件更新完成')
+    }
+    componentWillUnmount() {
+        console.log('组件销毁')
+        clearInterval(this.id);
     }
     render() {
+        console.log('render')
         return (
             <div>
                 <Button type="primary" onClick={this.skipIndex}>跳转</Button>
