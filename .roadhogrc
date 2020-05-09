@@ -1,7 +1,7 @@
 "proxy": {
     "/api": {
-      "target": "http://127.0.0.1:3000/api/",
-      "changeOrigin": true,
+      "target": "http://127.0.0.1:3000/api/", // 通过反向代理
+      "changeOrigin": true, //  设置跨域请求
       "pathRewrite": { "^/api" : "" }
     }
 }
