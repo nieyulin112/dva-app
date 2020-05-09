@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'dva';
 import { routerRedux } from 'dva/router';
-import styles from '../index/IndexPage.less';
 // import PropTypes from 'prop-types';
 class HomePage extends React.Component {
     componentDidMount() {
@@ -12,9 +11,8 @@ class HomePage extends React.Component {
     }
     render() {
         return (
-            <div className={styles.normal}>
-                <div className={styles.welcome} />
-                <ul className={styles.list}>
+            <div>
+                <ul>
                     <li onClick={this.skipIndex}>333</li>
                 </ul>
                 <div onClick={this.test}>测试</div>
