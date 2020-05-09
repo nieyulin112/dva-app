@@ -17,7 +17,7 @@ export default class Children extends React.Component {
     }
 }
 Children.defaultProps = {
-    name: '聂玉林'
+    name: 'nyl'
 }
 Children.propTypes = {
     name: PropTypes.string

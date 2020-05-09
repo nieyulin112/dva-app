@@ -13,7 +13,7 @@ class HomePage extends React.Component {
         console.log('constructor');
         this.state = {
             ticket: 1,
-            name: '聂玉林',
+            name: 'nyl',
             childrenMsg: ''
         }
     }
@@ -36,7 +36,6 @@ class HomePage extends React.Component {
         clearInterval(this.id);
     }
     render() {
-        // const name = '聂玉林'
         return (
             <div>
                 <Button className={styles.mt} type="primary" onClick={this.skipIndex}>跳转</Button>
