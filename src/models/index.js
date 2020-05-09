@@ -1,4 +1,6 @@
-import homePage from './home';
+import homePage from './home/home';
+import indexPage from './index/index'
 export default {
-    homePage: homePage
+    homePage: homePage,
+    indexPage: indexPage
 }
