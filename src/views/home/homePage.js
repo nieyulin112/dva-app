@@ -3,6 +3,7 @@ import { connect } from 'dva';
 import { routerRedux } from 'dva/router';
 import { Button, Modal } from 'antd-mobile';
 import Children from './children'
+import styles from './homePage.less';
 // import PropTypes from 'prop-types';
 class HomePage extends React.Component {
     // 生命周期的使用
@@ -22,9 +23,10 @@ class HomePage extends React.Component {
         });
     }
     // 子组件是不是应该更新
-    shouldComponentUpdate() {
-        return false
-    }
+    // shouldComponentUpdate(pre, next) {
+    //     console.log('pre', pre, next);
+    //     return true // 表示可以更新
+    // }
     componentDidUpdate() {
         console.log('组件更新完成')
     }
@@ -37,12 +39,15 @@ class HomePage extends React.Component {
         // const name = '聂玉林'
         return (
             <div>
-                <Button type="primary" onClick={this.skipIndex}>跳转</Button>
-                <Button type="default" onClick={this.test}>测试</Button>
-                <Button type="warning" onClick={this.btnMsg}>warning</Button>
-                <Button type="default" onClick={this.getChildMsg}>获取子组件的值</Button>
+                <Button className={styles.mt} type="primary" onClick={this.skipIndex}>跳转</Button>
+                <Button className={styles.mt} type="default" onClick={this.test}>测试</Button>
+                <Button className={styles.mt} type="warning" onClick={this.btnMsg}>warning</Button>
+                <Button className={[styles.mt, styles.mb]} type="default" onClick={this.getChildMsg}>获取子组件的值</Button>
                 <Children ref="children">
                 </Children>
+                <div className={styles.childMsg}>
+                    {this.state.childrenMsg}
+                </div>
             </div>
         )
     }

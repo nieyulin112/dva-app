@@ -5,7 +5,7 @@ export default class Children extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            msg: '我是子组件22222'
+            msg: '我是子组件'
         }
     }
     render() {
