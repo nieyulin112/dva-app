@@ -7,7 +7,6 @@ const app = dva();
 window.apps = app;
 // 2. Plugins
 app.use(createLoading());
-console.log('models', models);
 // 3. Model
 // app.model(require('./models/example').default);
 Object.keys(models).forEach(k => app.model(models[k]));
