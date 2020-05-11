@@ -21,6 +21,7 @@ class HomePage extends React.Component {
         this.setState({ticket: 2}, () => {
             console.log('ticket', this.state.ticket);
         });
+        console.log('性能监控', window.performance.getEntriesByType('navigation'));
     }
     // 子组件是不是应该更新
     // shouldComponentUpdate(pre, next) {
