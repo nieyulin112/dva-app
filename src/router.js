@@ -6,9 +6,9 @@ function RouterConfig({ history }) {
 		<Router history={history}>
 			<Switch>
 				{
-				routes.map(ps => (<Route exact render={() =>{ document.title = ps.title; return <ps.component/>}} 
-					key={ps.path} path={ps.path} title={ps.title}>
-				</Route>))
+					routes.map(ps => (<Route exact render={() =>{ document.title = ps.title; return <ps.component/>}} 
+						key={ps.path} path={ps.path} title={ps.title}>
+					</Route>))
 				}
 			</Switch>
 		</Router>
